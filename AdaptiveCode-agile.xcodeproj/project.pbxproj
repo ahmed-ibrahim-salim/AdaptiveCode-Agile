@@ -13,6 +13,7 @@
 		EFAA8625294FAC3E00F6F01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8623294FAC3E00F6F01A /* Main.storyboard */; };
 		EFAA8627294FAC4000F6F01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8626294FAC4000F6F01A /* Assets.xcassets */; };
 		EFAA862A294FAC4000F6F01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8628294FAC4000F6F01A /* LaunchScreen.storyboard */; };
+		EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8632294FACC900F6F01A /* SimpleDependency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EFAA8626294FAC4000F6F01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFAA8629294FAC4000F6F01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFAA862B294FAC4000F6F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFAA8632294FACC900F6F01A /* SimpleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDependency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		EFAA861C294FAC3E00F6F01A /* AdaptiveCode-agile */ = {
 			isa = PBXGroup;
 			children = (
+				EFAA8631294FAC9600F6F01A /* CH3-adaptivetools */,
 				EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */,
 				EFAA861F294FAC3E00F6F01A /* SceneDelegate.swift */,
 				EFAA8621294FAC3E00F6F01A /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				EFAA862B294FAC4000F6F01A /* Info.plist */,
 			);
 			path = "AdaptiveCode-agile";
+			sourceTree = "<group>";
+		};
+		EFAA8631294FAC9600F6F01A /* CH3-adaptivetools */ = {
+			isa = PBXGroup;
+			children = (
+				EFAA8632294FACC900F6F01A /* SimpleDependency.swift */,
+			);
+			path = "CH3-adaptivetools";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
+				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
 				EFAA8620294FAC3E00F6F01A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
