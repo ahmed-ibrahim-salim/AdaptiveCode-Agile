@@ -8,28 +8,31 @@
 import Foundation
 
 // direct object instantiation—is an example of “inappropriate intimacy” code smell.
-// An example of how instantiating objects prevents code from being adaptive.
-class User{
-    
-    func ChangePassword(_ newPassword: String){
-        
-    }
+// An example of how Instantiating objects prevents code from being adaptive.
+fileprivate protocol UserRepositoryProtocol{
+    func GetUserByID(_ userID: UUID)->User
 }
-
-protocol UserRepositoryProtocol{
-    func GetByID(_ userID: UUID)->User
-}
-class UserRepository: UserRepositoryProtocol{
+fileprivate class UserRepository: UserRepositoryProtocol{
     
-    func GetByID(_ userID: UUID)->User{
+    func GetUserByID(_ userID: UUID)->User{
         return User()
     }
     
 }
+fileprivate class User{
+    func ChangePassword(_ newPassword: String){
+    }
+}
 
-class SecurityService: SecurityServiceProtocol{
+// MARK: Security Service
+fileprivate protocol SecurityServiceProtocol{
+    func ChangeUsersPassword(_ userID: UUID,
+                             _ newPassword: String)
+}
+
+fileprivate class SecurityService: SecurityServiceProtocol{
     
-    private var userRepository: UserRepositoryProtocol
+    private let userRepository: UserRepositoryProtocol
     
     init(userRepository: UserRepositoryProtocol) {
         self.userRepository = userRepository
@@ -38,20 +41,15 @@ class SecurityService: SecurityServiceProtocol{
     func ChangeUsersPassword(_ userID: UUID,
                              _ newPassword: String){
         
-        var user = userRepository.GetByID(userID)
+        var user = userRepository.GetUserByID(userID)
         user.ChangePassword(newPassword)
         
     }
 }
-
-protocol SecurityServiceProtocol{
-    func ChangeUsersPassword(_ userID: UUID,
-                             _ newPassword: String)
-}
-
-class AccountController{
+//MARK: Account Controller
+fileprivate class AccountController{
     
-    private var securityService: SecurityServiceProtocol
+    private let securityService: SecurityServiceProtocol
     
     init(securityService: SecurityServiceProtocol) {
         self.securityService = securityService

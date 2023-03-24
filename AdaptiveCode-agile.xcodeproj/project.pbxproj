@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF271D1029CE5051008365FD /* NullObjectPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF271D0F29CE5051008365FD /* NullObjectPattern.swift */; };
 		EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */; };
 		EFAA8620294FAC3E00F6F01A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA861F294FAC3E00F6F01A /* SceneDelegate.swift */; };
 		EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8621294FAC3E00F6F01A /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF271D0F29CE5051008365FD /* NullObjectPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullObjectPattern.swift; sourceTree = "<group>"; };
 		EFAA861A294FAC3E00F6F01A /* AdaptiveCode-agile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdaptiveCode-agile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFAA861F294FAC3E00F6F01A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF271D0E29CE501A008365FD /* CH4 */ = {
+			isa = PBXGroup;
+			children = (
+				EF271D0F29CE5051008365FD /* NullObjectPattern.swift */,
+			);
+			path = CH4;
+			sourceTree = "<group>";
+		};
 		EFAA8611294FAC3E00F6F01A = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		EFAA861C294FAC3E00F6F01A /* AdaptiveCode-agile */ = {
 			isa = PBXGroup;
 			children = (
+				EF271D0E29CE501A008365FD /* CH4 */,
 				EFAA8631294FAC9600F6F01A /* CH3-adaptivetools */,
 				EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */,
 				EFAA861F294FAC3E00F6F01A /* SceneDelegate.swift */,
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF271D1029CE5051008365FD /* NullObjectPattern.swift in Sources */,
 				EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
 				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
