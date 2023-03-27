@@ -15,6 +15,7 @@
 		EFAA8627294FAC4000F6F01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8626294FAC4000F6F01A /* Assets.xcassets */; };
 		EFAA862A294FAC4000F6F01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8628294FAC4000F6F01A /* LaunchScreen.storyboard */; };
 		EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8632294FACC900F6F01A /* SimpleDependency.swift */; };
+		EFB364E629D17B250099788E /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB364E529D17B250099788E /* Adapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFAA8629294FAC4000F6F01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFAA862B294FAC4000F6F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAA8632294FACC900F6F01A /* SimpleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDependency.swift; sourceTree = "<group>"; };
+		EFB364E529D17B250099788E /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				EF271D0F29CE5051008365FD /* NullObjectPattern.swift */,
+				EFB364E529D17B250099788E /* Adapter.swift */,
 			);
 			path = CH4;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF271D1029CE5051008365FD /* NullObjectPattern.swift in Sources */,
+				EFB364E629D17B250099788E /* Adapter.swift in Sources */,
 				EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
 				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
