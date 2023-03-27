@@ -7,11 +7,11 @@
 
 import Foundation
 // Adapter
-public protocol IExpectedInterface{
+public protocol AdapterProtocol{
     func MethodA()
 }
 
-public class Adapter : IExpectedInterface{
+public class Adapter : AdapterProtocol{
     private var target: LegacyClass
     
     // injected legacy class
@@ -25,6 +25,7 @@ public class Adapter : IExpectedInterface{
     }
 }
 
+// Legacy class that the client wants to use
 public final class LegacyClass{
     
     public func MethodB(){}
@@ -32,10 +33,10 @@ public final class LegacyClass{
 }
 
 class Client{
-    var dependency: IExpectedInterface
+    var dependency: AdapterProtocol
     
     // injected adapter
-    init(dependency: IExpectedInterface) {
+    init(dependency: AdapterProtocol) {
         self.dependency = dependency
     }
     
