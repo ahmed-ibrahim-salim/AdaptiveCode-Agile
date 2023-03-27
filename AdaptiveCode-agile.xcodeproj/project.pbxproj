@@ -16,6 +16,7 @@
 		EFAA862A294FAC4000F6F01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFAA8628294FAC4000F6F01A /* LaunchScreen.storyboard */; };
 		EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8632294FACC900F6F01A /* SimpleDependency.swift */; };
 		EFB364E629D17B250099788E /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB364E529D17B250099788E /* Adapter.swift */; };
+		EFB364E829D1B0650099788E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB364E729D1B0650099788E /* Strategy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EFAA862B294FAC4000F6F01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFAA8632294FACC900F6F01A /* SimpleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDependency.swift; sourceTree = "<group>"; };
 		EFB364E529D17B250099788E /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
+		EFB364E729D1B0650099788E /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				EF271D0F29CE5051008365FD /* NullObjectPattern.swift */,
 				EFB364E529D17B250099788E /* Adapter.swift */,
+				EFB364E729D1B0650099788E /* Strategy.swift */,
 			);
 			path = CH4;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				EF271D1029CE5051008365FD /* NullObjectPattern.swift in Sources */,
 				EFB364E629D17B250099788E /* Adapter.swift in Sources */,
 				EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */,
+				EFB364E829D1B0650099788E /* Strategy.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
 				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
 				EFAA8620294FAC3E00F6F01A /* SceneDelegate.swift in Sources */,
