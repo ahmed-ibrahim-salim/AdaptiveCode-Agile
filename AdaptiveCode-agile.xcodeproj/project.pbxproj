@@ -17,6 +17,7 @@
 		EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA8632294FACC900F6F01A /* SimpleDependency.swift */; };
 		EFB364E629D17B250099788E /* Adapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB364E529D17B250099788E /* Adapter.swift */; };
 		EFB364E829D1B0650099788E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB364E729D1B0650099788E /* Strategy.swift */; };
+		EFE78D1B29D2310500B4CBEC /* Refactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE78D1A29D2310500B4CBEC /* Refactoring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EFAA8632294FACC900F6F01A /* SimpleDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDependency.swift; sourceTree = "<group>"; };
 		EFB364E529D17B250099788E /* Adapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapter.swift; sourceTree = "<group>"; };
 		EFB364E729D1B0650099788E /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		EFE78D1A29D2310500B4CBEC /* Refactoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refactoring.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		EFAA861C294FAC3E00F6F01A /* AdaptiveCode-agile */ = {
 			isa = PBXGroup;
 			children = (
+				EFE78D1C29D2310B00B4CBEC /* CH06 */,
 				EF271D0E29CE501A008365FD /* CH4 */,
 				EFAA8631294FAC9600F6F01A /* CH3-adaptivetools */,
 				EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */,
@@ -93,6 +96,14 @@
 				EFAA8632294FACC900F6F01A /* SimpleDependency.swift */,
 			);
 			path = "CH3-adaptivetools";
+			sourceTree = "<group>";
+		};
+		EFE78D1C29D2310B00B4CBEC /* CH06 */ = {
+			isa = PBXGroup;
+			children = (
+				EFE78D1A29D2310500B4CBEC /* Refactoring.swift */,
+			);
+			path = CH06;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				EFB364E829D1B0650099788E /* Strategy.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
 				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
+				EFE78D1B29D2310500B4CBEC /* Refactoring.swift in Sources */,
 				EFAA8620294FAC3E00F6F01A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

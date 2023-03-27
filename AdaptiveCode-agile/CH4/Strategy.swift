@@ -42,6 +42,6 @@ public class Context{
         currentStrategy.Execute()
         
         // swap strategy with each call
-        currentStrategy = (currentStrategy == strategyA) ? strategyB : strategyA
+        currentStrategy = (currentStrategy is ConcreteStrategyA) ? strategyB : strategyA
     }
 }
