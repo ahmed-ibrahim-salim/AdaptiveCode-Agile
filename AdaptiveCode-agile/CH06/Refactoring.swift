@@ -7,31 +7,12 @@
 
 import Foundation
 
-enum AccountType{
-    case Silver
-    case Gold
-    case Platinum
-    case Copper
-}
-
 class Account{
-    private let type: AccountType
-    
-    init(type: AccountType){
-        self.type = type
-    }
-    
-    private (set) var Balance: Double = 0.0
-    
-    private (set) var RewardPoints: Int = 0
-    
-    private let GoldBalanceCostPerPoint: Double = 5.0
-    private let PlatinumBalanceCostPerPoint: Double = 10.0
-    
-    private let SilverTransactionCostPerPoint: Double = 10.0
-    private let GoldTransactionCostPerPoint: Double = 5.0
-    private let PlatinumTransactionCostPerPoint: Double = 2.0
+    private var accountBaseProtocol: AccountBaseProtocol?
 
+    private(set) var Balance: Double = 0.0
+    private(set) var RewardPoints: Int = 0
+    
     
     func AddTransaction(amount: Double){
         RewardPoints += CalculateRewardPoints(amount);
@@ -39,17 +20,56 @@ class Account{
     }
     
     func CalculateRewardPoints(_ amount: Double)->Int{
-        var points = 0
-        switch(type){
-        case AccountType.Silver:
-            points = Int(floor(amount / SilverTransactionCostPerPoint));
-        case AccountType.Gold:
-            points = Int(floor((Balance / 10000 * GoldBalanceCostPerPoint) + (amount / GoldTransactionCostPerPoint)))
-        case AccountType.Platinum:
-            points = Int(ceil(((Balance / 10000 * PlatinumBalanceCostPerPoint) + (amount / PlatinumTransactionCostPerPoint))))
-        default:
-            points = 0;
-        }
+        guard let points = accountBaseProtocol?.CalculateRewardPoints(amount) else{ return 0}
         return max(points, 0);
+    }
+}
+
+protocol AccountBaseProtocol{
+    
+    var Balance: Double {get}
+    
+    var RewardPoints: Int {get}
+    
+    func CalculateRewardPoints(_ amount: Double)->Int
+}
+
+class SilverAccount: AccountBaseProtocol{
+    private let SilverTransactionCostPerPoint: Double = 10.0
+
+    private(set) var Balance: Double = 0.0
+    
+    private(set) var RewardPoints: Int = 1
+        
+    func CalculateRewardPoints(_ amount: Double) -> Int {
+        return Int(floor(amount / SilverTransactionCostPerPoint));
+    }
+}
+
+class GoldAccount: AccountBaseProtocol{
+    
+    private let GoldBalanceCostPerPoint: Double = 5.0
+    private let GoldTransactionCostPerPoint: Double = 5.0
+
+    private(set) var Balance: Double = 0.0
+    
+    private(set) var RewardPoints: Int = 1
+    
+    
+    func CalculateRewardPoints(_ amount: Double) -> Int {
+        return Int(floor((Balance / 10000 * GoldBalanceCostPerPoint) + (amount / GoldTransactionCostPerPoint)))
+    }
+}
+class PlatinumAccount: AccountBaseProtocol{
+    
+    private let PlatinumTransactionCostPerPoint: Double = 2.0
+    private let PlatinumBalanceCostPerPoint: Double = 10.0
+
+    private(set) var Balance: Double = 0.0
+    
+    private(set) var RewardPoints: Int = 1
+    
+    func CalculateRewardPoints(_ amount: Double) -> Int {
+        return Int(ceil(((Balance / 10000 * PlatinumBalanceCostPerPoint) + (amount / PlatinumTransactionCostPerPoint))))
     }
 }
