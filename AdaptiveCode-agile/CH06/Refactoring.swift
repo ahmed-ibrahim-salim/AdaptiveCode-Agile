@@ -7,35 +7,15 @@
 
 import Foundation
 
-// MARK: Factory
-protocol AccountFactoryProtocol{
-    func createAccount(type: AccountType)->AccountBaseProtocol
-}
-class AccountFactory: AccountFactoryProtocol{
-    // factory Method, creates class based on provided type
-    func createAccount(type: AccountType)->AccountBaseProtocol{
-        var account: AccountBaseProtocol
-        
-        switch type{
-        case AccountType.Silver:
-            account = SilverAccount()
-        case AccountType.Gold:
-            account = GoldAccount()
-        case AccountType.Platinum:
-            account = PlatinumAccount()
-        }
-        return account
-    }
-}
-
 enum AccountType{
     case Silver
     case Gold
     case Platinum
 }
 
+// Super class uses factory
 class Account{
-    private var accountBaseProtocol: AccountBaseProtocol?
+    private var accountBaseProtocol: Account?
     
     private(set) var Balance: Double = 0.0
     private(set) var RewardPoints: Int = 0
@@ -46,9 +26,7 @@ class Account{
     }
     
     var accountFactory: AccountFactoryProtocol
-    func createAccount(type: AccountType)->AccountBaseProtocol{
-        
-        
+    func createAccount(type: AccountType)->Account{
         return accountFactory.createAccount(type: type)
         
     }
@@ -64,52 +42,96 @@ class Account{
     }
 }
 
-protocol AccountBaseProtocol{
-    
-    var Balance: Double {get}
-    
-    var RewardPoints: Int {get}
-    
-    func CalculateRewardPoints(_ amount: Double)->Int
+// MARK: Factory
+protocol AccountFactoryProtocol{
+    func createAccount(type: AccountType)->Account
+}
+class AccountFactory: AccountFactoryProtocol{
+    // factory Method, creates class based on provided type
+    func createAccount(type: AccountType)->Account{
+        var account: Account
+        
+        switch type{
+        case AccountType.Silver:
+            account = SilverAccount(accountFactory: AccountFactory())
+        case AccountType.Gold:
+            account = GoldAccount(accountFactory: AccountFactory())
+        case AccountType.Platinum:
+            account = PlatinumAccount(accountFactory: AccountFactory())
+        }
+        return account
+    }
+}
+
+
+// Refused bequest --> this subclass refuses to use other functions from superclass
+private class StandardAccount: Account{
+    // this new account does not have reward points
+    override func CalculateRewardPoints(_ amount: Double) -> Int {
+        return 0
+    }
 }
 
 // These classes are private
-private class SilverAccount: AccountBaseProtocol{
+private class SilverAccount: Account{
     private let SilverTransactionCostPerPoint: Double = 10.0
     
-    private(set) var Balance: Double = 0.0
-    
-    private(set) var RewardPoints: Int = 1
-    
-    func CalculateRewardPoints(_ amount: Double) -> Int {
+
+    override func CalculateRewardPoints(_ amount: Double) -> Int {
         return Int(floor(amount / SilverTransactionCostPerPoint));
     }
 }
 
-private class GoldAccount: AccountBaseProtocol{
+private class GoldAccount: Account{
     
     private let GoldBalanceCostPerPoint: Double = 5.0
     private let GoldTransactionCostPerPoint: Double = 5.0
     
-    private(set) var Balance: Double = 0.0
+
     
-    private(set) var RewardPoints: Int = 1
-    
-    
-    func CalculateRewardPoints(_ amount: Double) -> Int {
+    override func CalculateRewardPoints(_ amount: Double) -> Int {
         return Int(floor((Balance / 10000 * GoldBalanceCostPerPoint) + (amount / GoldTransactionCostPerPoint)))
     }
 }
-private class PlatinumAccount: AccountBaseProtocol{
+private class PlatinumAccount: Account{
     
     private let PlatinumTransactionCostPerPoint: Double = 2.0
     private let PlatinumBalanceCostPerPoint: Double = 10.0
     
-    private(set) var Balance: Double = 0.0
-    
-    private(set) var RewardPoints: Int = 1
-    
-    func CalculateRewardPoints(_ amount: Double) -> Int {
+    override func CalculateRewardPoints(_ amount: Double) -> Int {
         return Int(ceil(((Balance / 10000 * PlatinumBalanceCostPerPoint) + (amount / PlatinumTransactionCostPerPoint))))
     }
+}
+
+// MARK: Rewarding
+protocol IRewardCard{
+    var RewardPoints: Int { get }
+    func CalculateRewardPoints(transactionAmount: Double, accountBalance: Double )
+}
+
+private class BronzeRewardCard : IRewardCard{
+    private (set) var RewardPoints: Int = 0
+    private let BronzeTransactionCostPerPoint = 20.0
+
+    func CalculateRewardPoints(transactionAmount: Double,
+                               accountBalance: Double){
+
+        RewardPoints += max(Int(floor(transactionAmount /
+                                      BronzeTransactionCostPerPoint)), 0);
+    }
+}
+
+private class PlatinumRewardCard : IRewardCard{
+    private (set) var RewardPoints: Int = 0
+    
+    private let PlatinumTransactionCostPerPoint = 2.0;
+    private let PlatinumBalanceCostPerPoint = 1000.0;
+    
+    func CalculateRewardPoints(transactionAmount: Double,
+                               accountBalance: Double){
+        RewardPoints += Int(max(ceil(
+            (accountBalance / PlatinumBalanceCostPerPoint) +
+            (transactionAmount / PlatinumTransactionCostPerPoint)), 0))
+    }
+    
 }
