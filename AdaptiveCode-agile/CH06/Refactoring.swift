@@ -16,7 +16,8 @@ enum AccountType{
 // Super class uses factory
 class Account{
     private var accountBaseProtocol: Account?
-    
+    private var accountFactory: AccountFactoryProtocol
+
     private(set) var Balance: Double = 0.0
     private(set) var RewardPoints: Int = 0
     
@@ -25,7 +26,6 @@ class Account{
         
     }
     
-    var accountFactory: AccountFactoryProtocol
     func createAccount(type: AccountType)->Account{
         return accountFactory.createAccount(type: type)
         
@@ -104,6 +104,7 @@ private class PlatinumAccount: Account{
 }
 
 // MARK: Rewarding
+// just injected and it works
 protocol IRewardCard{
     var RewardPoints: Int { get }
     func CalculateRewardPoints(transactionAmount: Double, accountBalance: Double )
