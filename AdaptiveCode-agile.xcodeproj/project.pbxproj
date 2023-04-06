@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF1F94ED29DEE49F009864D0 /* MakingLegacyCodeAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1F94EC29DEE49F009864D0 /* MakingLegacyCodeAdaptive.swift */; };
 		EF271D1029CE5051008365FD /* NullObjectPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF271D0F29CE5051008365FD /* NullObjectPattern.swift */; };
 		EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */; };
 		EFAA8620294FAC3E00F6F01A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAA861F294FAC3E00F6F01A /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF1F94EC29DEE49F009864D0 /* MakingLegacyCodeAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakingLegacyCodeAdaptive.swift; sourceTree = "<group>"; };
 		EF271D0F29CE5051008365FD /* NullObjectPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullObjectPattern.swift; sourceTree = "<group>"; };
 		EFAA861A294FAC3E00F6F01A /* AdaptiveCode-agile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdaptiveCode-agile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFAA861D294FAC3E00F6F01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				EFE78D1A29D2310500B4CBEC /* Refactoring.swift */,
+				EF1F94EC29DEE49F009864D0 /* MakingLegacyCodeAdaptive.swift */,
 			);
 			path = CH06;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				EFB364E629D17B250099788E /* Adapter.swift in Sources */,
 				EFAA8622294FAC3E00F6F01A /* ViewController.swift in Sources */,
 				EFB364E829D1B0650099788E /* Strategy.swift in Sources */,
+				EF1F94ED29DEE49F009864D0 /* MakingLegacyCodeAdaptive.swift in Sources */,
 				EFAA861E294FAC3E00F6F01A /* AppDelegate.swift in Sources */,
 				EFAA8633294FACC900F6F01A /* SimpleDependency.swift in Sources */,
 				EFE78D1B29D2310500B4CBEC /* Refactoring.swift in Sources */,
